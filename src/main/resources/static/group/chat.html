@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<head>
+    <title>devsq聊天室</title>
+    <link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/group/main.css" rel="stylesheet">
+    <script src="/webjars/jquery/jquery.min.js"></script>
+    <script src="/webjars/sockjs-client/sockjs.min.js"></script>
+    <script src="/webjars/stomp-websocket/stomp.min.js"></script>
+    <script src="/group/app.js"></script>
+</head>
+<body>
+
+<div id="main-content" class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <form class="form-inline">
+                <div class="form-group">
+                    <label for="connect">建立连接通道:</label>
+                    <button id="connect" class="btn btn-default" type="submit">Connect</button>
+                    <button id="disconnect" class="btn btn-default" type="submit" disabled="disabled">Disconnect
+                    </button>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-6">
+            <form class="form-inline">
+                <div class="form-group">
+                    <input type="text" id="content" class="form-control" placeholder="请输入...">
+                </div>
+                <button id="send" class="btn btn-default" type="submit">发送</button>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <table id="conversation" class="table table-striped">
+                <thead>
+                <tr>
+                    <th>实时在线用户列表</th>
+                </tr>
+                </thead>
+                <tbody id='online'>
+                </tbody>
+            </table>
+        </div>
+        
+         <div class="col-md-6">
+            <table id="conversation" class="table table-striped">
+                <thead>
+                <tr>
+                    <th>聊天记录</th>
+                </tr>
+                </thead>
+                <tbody id='record'>
+                </tbody>
+            </table>
+        </div>
+        
+        
+    </div>
+</div>
+</body>
+</html>
