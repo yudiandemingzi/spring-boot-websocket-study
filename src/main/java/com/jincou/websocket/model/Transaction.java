@@ -9,10 +9,19 @@ import lombok.Data;
 @Data
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Transaction {
-    //成交时间
+
+    /**
+     * 成交时间
+     */
     private String time;
-    //成交价格
+
+    /**
+     * 成交价格
+     */
     private int price;
-    //成交量（手）
+
+    /**
+     * 成交量（手）
+     */
     private int volume;
 }

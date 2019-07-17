@@ -8,19 +8,21 @@ import org.springframework.stereotype.Component;
 
 /**
  * //要启动定时任务记得在启动类上添加下面两个注解
+ *
  * @ComponentScan(basePackages="com.jincou.websocket")
- * @EnableScheduling
- * 功能描述：股票推送,这里只需通过定时任务向客服端发送消息
+ * @EnableScheduling 功能描述：股票推送,这里只需通过定时任务向客服端发送消息
  */
 @Component
 public class CoinSchedule {
 
-	@Autowired
-	private WebSocketService ws;
+    @Autowired
+    private WebSocketService ws;
 
-	//代表每2秒执行一次任务
-	@Scheduled(fixedRate=100000000)
-	public void coinInfo(){
-		ws.sendCoinInfo();
-	}
+    /**
+     * 定时任务
+     */
+    @Scheduled(fixedRate = 100000000)
+    public void coinInfo() {
+        ws.sendCoinInfo();
+    }
 }

@@ -26,7 +26,6 @@ public class InMessage {
         return from;
     }
 
-   //手写一个只传content的构造函数
     public InMessage(String content) {
         this.content = content;
     }

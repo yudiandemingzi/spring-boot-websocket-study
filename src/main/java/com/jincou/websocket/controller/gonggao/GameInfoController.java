@@ -6,17 +6,20 @@ import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.stereotype.Controller;
 
-/*
- *模拟游戏公告
+/**
+ * @author xub
+ * @Description: 模拟游戏公告
+ * @date 2019/7/17 下午4:31
  */
 @Controller
 public class GameInfoController {
 
-  //@MessageMapping和@RequestMapping功能类似，用于设置URL映射地址，浏览器向服务器发起请求，需要通过该地址。
-  //如果服务器接受到了消息，就会对订阅了@SendTo括号中的地址传送消息。
+    /**
+     * @MessageMapping和@RequestMapping功能类似，用于设置URL映射地址，浏览器向服务器发起请求，需要通过该地址。 如果服务器接受到了消息，就会对订阅了@SendTo括号中的地址传送消息。
+     */
     @MessageMapping("/gonggao/chat")
     @SendTo("/topic/game_chat")
-    public OutMessage gameInfo(InMessage message){
+    public OutMessage gameInfo(InMessage message) {
 
         return new OutMessage(message.getContent());
     }

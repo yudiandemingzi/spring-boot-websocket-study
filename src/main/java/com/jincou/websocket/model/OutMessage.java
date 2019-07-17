@@ -20,8 +20,8 @@ public class OutMessage {
 
     private Date time = new Date();
 
-    //手写一个只传content构造行数
-    public OutMessage(String content){
+
+    public OutMessage(String content) {
         this.content = content;
     }
 }

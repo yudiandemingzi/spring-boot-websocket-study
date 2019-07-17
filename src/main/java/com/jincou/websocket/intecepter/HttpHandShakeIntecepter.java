@@ -16,9 +16,11 @@ import org.springframework.web.socket.server.HandshakeInterceptor;
  */
 public class HttpHandShakeIntecepter implements HandshakeInterceptor{
 
-
-	//在握手之前执行该方法, 继续握手返回true, 中断握手返回false. 通过attributes参数设置WebSocketSession的属性
-	//这个项目只在WebSocketSession这里存入sessionID
+	/**
+	 *
+	 * 在握手之前执行该方法, 继续握手返回true, 中断握手返回false. 通过attributes参数设置WebSocketSession的属性
+	 * 这个项目只在WebSocketSession这里存入sessionID
+	 */
 	@Override
 	public boolean beforeHandshake(ServerHttpRequest request,
 			ServerHttpResponse response, WebSocketHandler wsHandler,
@@ -34,18 +36,20 @@ public class HttpHandShakeIntecepter implements HandshakeInterceptor{
 			//这里将sessionId放入SessionAttributes中，
 			attributes.put("sessionId", sessionId);
 		}
-		
+
 		return true;
 	}
 
-	
-	//在握手之后执行该方法. 无论是否握手成功都指明了响应状态码和相应头(这个项目没有用到）
+
+	/**
+	 * 在握手之后执行该方法. 无论是否握手成功都指明了响应状态码和相应头(这个项目没有用到）
+	 */
 	@Override
 	public void afterHandshake(ServerHttpRequest request,
 			ServerHttpResponse response, WebSocketHandler wsHandler,
 			Exception exception) {
 		System.out.println("【握手拦截器】afterHandshake");
-		
+
 		if(request instanceof ServletServerHttpRequest) {
 			ServletServerHttpRequest servletRequest = (ServletServerHttpRequest)request;
 			HttpSession session =  servletRequest.getServletRequest().getSession();

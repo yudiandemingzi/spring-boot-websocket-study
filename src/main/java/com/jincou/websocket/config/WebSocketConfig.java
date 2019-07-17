@@ -9,15 +9,21 @@ import org.springframework.web.socket.config.annotation.EnableWebSocketMessageBr
 import org.springframework.web.socket.config.annotation.StompEndpointRegistry;
 import org.springframework.web.socket.config.annotation.WebSocketMessageBrokerConfigurer;
 
+/**
+ * @author xub
+ * @Description: 注解用于开启使用STOMP协议来传输基于代理（MessageBroker）的消息，这时候控制器（controller）
+ * 开始支持@MessageMapping,就像是使用@requestMapping一样。
+ * @date 2019/7/17 下午4:28
+ */
 @Configuration
-//注解用于开启使用STOMP协议来传输基于代理（MessageBroker）的消息，这时候控制器（controller）开始支持@MessageMapping,就像是使用@requestMapping一样。
 @EnableWebSocketMessageBroker
 public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
 
 
     /**
-     *配置基站
+     * 配置基站
      */
+    @Override
     public void registerStompEndpoints(StompEndpointRegistry registry) {
 
         registry.addEndpoint("/endpoint-websocket").addInterceptors(new HttpHandShakeIntecepter()).setAllowedOrigins("*").withSockJS();
@@ -31,7 +37,7 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
     @Override
     public void configureMessageBroker(MessageBrokerRegistry registry) {
 
-        registry.enableSimpleBroker("/topic","/chat");
+        registry.enableSimpleBroker("/topic", "/chat");
         registry.setApplicationDestinationPrefixes("/app");
 
     }
@@ -39,12 +45,12 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
 
     @Override
     public void configureClientInboundChannel(ChannelRegistration registration) {
-        registration.interceptors( new SocketChannelIntecepter());
+        registration.interceptors(new SocketChannelIntecepter());
     }
 
     @Override
     public void configureClientOutboundChannel(ChannelRegistration registration) {
-        registration.interceptors( new SocketChannelIntecepter());
+        registration.interceptors(new SocketChannelIntecepter());
     }
 
 }
