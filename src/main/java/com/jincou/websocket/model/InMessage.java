@@ -6,12 +6,13 @@ import lombok.NoArgsConstructor;
 
 import java.util.Date;
 
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
+
 /**
  * 接受客户端数据实体
  */
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class InMessage {
 
     private String from;

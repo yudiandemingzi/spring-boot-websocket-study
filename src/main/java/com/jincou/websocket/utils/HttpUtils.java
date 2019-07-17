@@ -36,7 +36,6 @@ import org.apache.http.message.BasicNameValuePair;
  * @Description: httpClient工具类，模拟http或者https请求，支持get,post
  * API地址：http://tool.oschina.net/uploads/apidocs/httpcomponents/index.html?overview-summary.html
  * @author xub
- * @date 2019/7/17 下午4:38
  */
 public class HttpUtils {
 

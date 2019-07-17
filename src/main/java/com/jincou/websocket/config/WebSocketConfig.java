@@ -13,7 +13,6 @@ import org.springframework.web.socket.config.annotation.WebSocketMessageBrokerCo
  * @author xub
  * @Description: 注解用于开启使用STOMP协议来传输基于代理（MessageBroker）的消息，这时候控制器（controller）
  * 开始支持@MessageMapping,就像是使用@requestMapping一样。
- * @date 2019/7/17 下午4:28
  */
 @Configuration
 @EnableWebSocketMessageBroker

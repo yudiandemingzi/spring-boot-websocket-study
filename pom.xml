@@ -4,11 +4,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.jincou.websocket</groupId>
-	<artifactId>websocketstudy</artifactId>
+	<artifactId>spring-boot-websocket-study</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>websocketstudy</name>
+	<name>spring-boot-websocket-study</name>
 	<description>Demo project for Spring Boot</description>
 
 	<parent>

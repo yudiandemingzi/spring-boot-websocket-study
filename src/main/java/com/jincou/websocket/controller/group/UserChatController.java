@@ -25,8 +25,8 @@ public class UserChatController {
 
     /**
      * 登陆时，模拟数据库的用户信息
+     * 模拟数据库用户的数据
      */
-    //模拟数据库用户的数据
     public static Map<String, String> userMap = new HashMap<String, String>();
 
     static {

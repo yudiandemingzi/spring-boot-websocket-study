@@ -9,7 +9,6 @@ import java.util.concurrent.TimeUnit;
  * @Description: 工具类
  *
  * @author xub
- * @date 2019/7/17 下午4:44
  */
 public final class OkHttp {
 
