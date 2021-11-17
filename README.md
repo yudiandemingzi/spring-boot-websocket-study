@@ -36,3 +36,6 @@ SpringBoot2.1.0 + Maven3.5.4 + websocket + lombok(插件)+ html + js
 
 这里 获取比特币推送信息的服务 我这边并没有对接交易所的api获取而是在阿里云上购买的服务，现在账号密码已经过期了
 你们想要测试，可以自己去阿里云购买服务获取。购买地址我的博客里有。几块钱就可以买个1000次推送。
+
+![acda64387e0896604b5932dc433c8b77](https://user-images.githubusercontent.com/37285812/142141965-26432905-31ac-4aaa-ad5b-cae120129f7e.gif)
+
